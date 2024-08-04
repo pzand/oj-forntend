@@ -1,15 +1,22 @@
 <script setup lang="ts">
 import gfm from "@bytemd/plugin-gfm";
 import highlight from "@bytemd/plugin-highlight";
-import { Editor, Viewer } from "@bytemd/vue-next";
-import { ref } from "vue";
+import { Editor } from "@bytemd/vue-next";
+import { withDefaults, defineProps } from "vue";
 
 const plugins = [gfm(), highlight()];
-const value = ref("");
 
-const handleChange = (v: string) => {
-  value.value = v;
-};
+interface Props {
+  value: string;
+  handleChange: (v: string) => void;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  value: "",
+  handleChange: (v: string) => {
+    console.log(v);
+  },
+});
 </script>
 
 <template>
