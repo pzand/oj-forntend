@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="exampleView">
     <CodeEditor :value="codeValue" :handle-change="onCodeChange" />
     <MdEditor :value="mdValue" :handle-change="onMdChange" />
   </div>
@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import MdEditor from "@/components/MdEditor.vue";
-import CodeEditor from "@/components/CodeEditor.vue"; // @ is an alias to /src
+import CodeEditor from "@/components/CodeEditor.vue";
 import { ref } from "vue";
 
 const codeValue = ref("");

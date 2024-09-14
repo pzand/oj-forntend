@@ -4,6 +4,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import "@/plugin/axios";
 import "@/access/index"; //引入权限管理
 import "bytemd/dist/index.css"; // md编辑css
 

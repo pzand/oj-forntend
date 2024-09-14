@@ -17,11 +17,11 @@
 }
 
 #userLayout .header {
-  box-shadow: #eee 1px 1px 1px;
+  box-shadow: #eee 10px 10px 10px;
 }
 
 #userLayout .content {
-  background: linear-gradient(to right, #bbb, #fff);
+  background: linear-gradient(to right, #fefefe, #fff);
   margin-bottom: 16px;
   padding: 20px;
 }
