@@ -33,7 +33,7 @@ export class UserControllerService {
       method: "POST",
       url: "/user/update",
       body: requestBody,
-      mediaType: "application/json"
+      mediaType: "application/json",
     });
   }
 
@@ -49,7 +49,7 @@ export class UserControllerService {
       method: "POST",
       url: "/user/update/my",
       body: requestBody,
-      mediaType: "application/json"
+      mediaType: "application/json",
     });
   }
 
@@ -65,7 +65,7 @@ export class UserControllerService {
       method: "POST",
       url: "/user/register",
       body: requestBody,
-      mediaType: "application/json"
+      mediaType: "application/json",
     });
   }
 
@@ -76,7 +76,7 @@ export class UserControllerService {
   public static userLogout(): CancelablePromise<BaseResponseBoolean> {
     return __request(OpenAPI, {
       method: "POST",
-      url: "/user/logout"
+      url: "/user/logout",
     });
   }
 
@@ -92,7 +92,7 @@ export class UserControllerService {
       method: "POST",
       url: "/user/login",
       body: requestBody,
-      mediaType: "application/json"
+      mediaType: "application/json",
     });
   }
 
@@ -108,7 +108,7 @@ export class UserControllerService {
       method: "POST",
       url: "/user/list/page",
       body: requestBody,
-      mediaType: "application/json"
+      mediaType: "application/json",
     });
   }
 
@@ -124,7 +124,7 @@ export class UserControllerService {
       method: "POST",
       url: "/user/list/page/vo",
       body: requestBody,
-      mediaType: "application/json"
+      mediaType: "application/json",
     });
   }
 
@@ -140,7 +140,7 @@ export class UserControllerService {
       method: "POST",
       url: "/user/delete",
       body: requestBody,
-      mediaType: "application/json"
+      mediaType: "application/json",
     });
   }
 
@@ -156,7 +156,7 @@ export class UserControllerService {
       method: "POST",
       url: "/user/add",
       body: requestBody,
-      mediaType: "application/json"
+      mediaType: "application/json",
     });
   }
 
@@ -172,8 +172,8 @@ export class UserControllerService {
       method: "GET",
       url: "/user/login/wx_open",
       query: {
-        "code": code
-      }
+        code: code,
+      },
     });
   }
 
@@ -182,15 +182,13 @@ export class UserControllerService {
    * @returns BaseResponseUser OK
    * @throws ApiError
    */
-  public static getUserById(
-    id: number
-  ): CancelablePromise<BaseResponseUser> {
+  public static getUserById(id: number): CancelablePromise<BaseResponseUser> {
     return __request(OpenAPI, {
       method: "GET",
       url: "/user/get",
       query: {
-        "id": id
-      }
+        id: id,
+      },
     });
   }
 
@@ -206,8 +204,8 @@ export class UserControllerService {
       method: "GET",
       url: "/user/get/vo",
       query: {
-        "id": id
-      }
+        id: id,
+      },
     });
   }
 
@@ -218,7 +216,7 @@ export class UserControllerService {
   public static getLoginUser(): CancelablePromise<BaseResponseLoginUserVO> {
     return __request(OpenAPI, {
       method: "GET",
-      url: "/user/get/login"
+      url: "/user/get/login",
     });
   }
 }

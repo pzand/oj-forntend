@@ -18,8 +18,8 @@
       </a-form-item>
       <a-form-item>
         <a-button style="width: 100px; margin: 20px auto" html-type="submit"
-          >登录</a-button
-        >
+          >登录
+        </a-button>
       </a-form-item>
     </a-form>
   </div>

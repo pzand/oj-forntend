@@ -3,17 +3,17 @@
 /* tslint:disable */
 /* eslint-disable */
 export type User = {
-    id?: number;
-    userAccount?: string;
-    userPassword?: string;
-    unionId?: string;
-    mpOpenId?: string;
-    userName?: string;
-    userAvatar?: string;
-    userProfile?: string;
-    userRole?: string;
-    createTime?: string;
-    updateTime?: string;
-    isDelete?: number;
+  id?: number;
+  userAccount?: string;
+  userPassword?: string;
+  unionId?: string;
+  mpOpenId?: string;
+  userName?: string;
+  userAvatar?: string;
+  userProfile?: string;
+  userRole?: string;
+  createTime?: string;
+  updateTime?: string;
+  isDelete?: number;
 };
 

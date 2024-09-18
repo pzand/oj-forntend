@@ -3,10 +3,10 @@
 /* tslint:disable */
 /* eslint-disable */
 export type UserUpdateRequest = {
-    id?: number;
-    userName?: string;
-    userAvatar?: string;
-    userProfile?: string;
-    userRole?: string;
+  id?: number;
+  userName?: string;
+  userAvatar?: string;
+  userProfile?: string;
+  userRole?: string;
 };
 

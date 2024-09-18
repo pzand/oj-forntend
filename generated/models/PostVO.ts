@@ -2,19 +2,20 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UserVO } from './UserVO';
+import type { UserVO } from "./UserVO";
+
 export type PostVO = {
-    id?: number;
-    title?: string;
-    content?: string;
-    thumbNum?: number;
-    favourNum?: number;
-    userId?: number;
-    createTime?: string;
-    updateTime?: string;
-    tagList?: Array<string>;
-    user?: UserVO;
-    hasThumb?: boolean;
-    hasFavour?: boolean;
+  id?: number;
+  title?: string;
+  content?: string;
+  thumbNum?: number;
+  favourNum?: number;
+  userId?: number;
+  createTime?: string;
+  updateTime?: string;
+  tagList?: Array<string>;
+  user?: UserVO;
+  hasThumb?: boolean;
+  hasFavour?: boolean;
 };
 

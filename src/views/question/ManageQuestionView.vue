@@ -6,10 +6,11 @@
       :data="dataList"
       :pagination="{
         pageSize: searchParams.pageSize,
-        current: searchParams.pageNum,
-        total,
+        current: searchParams.current,
+        total: total,
         showTotal: true,
       }"
+      @page-change="onPageChange"
     >
       <template #optional="{ record }">
         <a-space>
@@ -22,16 +23,20 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import { Question, QuestionControllerService } from "../../../generated";
+import { onMounted, ref, watchEffect } from "vue";
+import {
+  Question,
+  QuestionControllerService,
+  QuestionQueryRequest,
+} from "../../../generated";
 import { Message } from "@arco-design/web-vue";
 import { useRouter } from "vue-router";
 
 const dataList = ref<Question[]>([]);
 const total = ref<number>(0);
-const searchParams = ref({
-  pageSize: 10,
-  pageNum: 1,
+const searchParams = ref<QuestionQueryRequest>({
+  pageSize: 2,
+  current: 1,
 });
 
 const loadData = async () => {
@@ -45,6 +50,10 @@ const loadData = async () => {
     Message.error("加载失败" + res.message);
   }
 };
+
+watchEffect(() => {
+  loadData();
+});
 
 onMounted(() => {
   loadData();
@@ -101,8 +110,14 @@ const columns = [
   },
 ];
 
-const router = useRouter();
+const onPageChange = (num: number) => {
+  searchParams.value = {
+    ...searchParams.value,
+    current: num,
+  };
+};
 
+const router = useRouter();
 const doUpdate = (record: Question) => {
   router.push({
     path: "/update/question",

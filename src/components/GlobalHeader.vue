@@ -37,10 +37,9 @@
 <script setup lang="ts">
 import { routes } from "@/router/routes";
 import { useRoute, useRouter } from "vue-router";
-import { ref, watch } from "vue";
+import { onMounted, ref, watch, watchEffect } from "vue";
 import { useStore } from "vuex";
 import checkAccess from "@/access/checkAccess";
-import ACCESS_ENUM from "@/access/accessEnum";
 
 // 获取当前的路由状态
 // const route = useRoute();
@@ -80,12 +79,10 @@ const doMenuClick = (key: string) => {
   selectRoute.value = [key];
 };
 
-setTimeout(() => {
-  store.dispatch("user/getLoginUser", {
-    userName: "pzand admin",
-    userRole: ACCESS_ENUM.ADMIN,
-  });
-}, 3000);
+const route = useRoute();
+watchEffect(() => {
+  selectRoute.value = [route.path];
+});
 </script>
 
 <style scoped>

@@ -2,19 +2,20 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { OrderItem } from './OrderItem';
-import type { User } from './User';
+import type { OrderItem } from "./OrderItem";
+import type { User } from "./User";
+
 export type PageUser = {
-    records?: Array<User>;
-    total?: number;
-    size?: number;
-    current?: number;
-    orders?: Array<OrderItem>;
-    optimizeCountSql?: PageUser;
-    searchCount?: PageUser;
-    optimizeJoinOfCountSql?: boolean;
-    maxLimit?: number;
-    countId?: string;
-    pages?: number;
+  records?: Array<User>;
+  total?: number;
+  size?: number;
+  current?: number;
+  orders?: Array<OrderItem>;
+  optimizeCountSql?: PageUser;
+  searchCount?: PageUser;
+  optimizeJoinOfCountSql?: boolean;
+  maxLimit?: number;
+  countId?: string;
+  pages?: number;
 };
 
