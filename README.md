@@ -1,18 +1,18 @@
 # oj-frontend
 
-## Project setup
+## 项目安装
 
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 编译并启动服务
 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 构建服务
 
 ```
 npm run build
@@ -24,6 +24,13 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
+### 根据后台，使用openapi生成接口
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```shell
+openapi --input http://localhost:8121/api/v3/api-docs --output ./generated --client axios
+```
+
+### Customize configuration
+- 前端组件：https://arco.design/vue/component/form
+- markdown组件：https://github.com/pd4d10/bytemd
+- 代码组件：https://github.com/microsoft/monaco-editor

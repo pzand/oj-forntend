@@ -19,9 +19,17 @@ const props = withDefaults(defineProps<Props>(), {
 const codeEditor = ref(); // monaco 实例
 const codeEditorRef = ref(); // monaco 的dom引用
 
-watch([props], () => {
-  console.log(props);
-});
+watch(
+  () => props.language,
+  () => {
+    if (codeEditor.value) {
+      monaco.editor.setModelLanguage(
+        toRaw(codeEditor.value).getModel(),
+        props.language
+      );
+    }
+  }
+);
 
 onMounted(() => {
   if (!codeEditorRef.value) {

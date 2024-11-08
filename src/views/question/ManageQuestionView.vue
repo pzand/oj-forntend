@@ -1,6 +1,5 @@
 <template>
   <div id="manageQuestionView">
-    <h2>创建题目</h2>
     <a-table
       :columns="columns"
       :data="dataList"
@@ -35,7 +34,7 @@ import { useRouter } from "vue-router";
 const dataList = ref<Question[]>([]);
 const total = ref<number>(0);
 const searchParams = ref<QuestionQueryRequest>({
-  pageSize: 2,
+  pageSize: 10,
   current: 1,
 });
 

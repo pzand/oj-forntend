@@ -28,7 +28,7 @@ export class PostControllerService {
       method: "POST",
       url: "/post/update",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -44,7 +44,7 @@ export class PostControllerService {
       method: "POST",
       url: "/post/search/page/vo",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -60,7 +60,7 @@ export class PostControllerService {
       method: "POST",
       url: "/post/my/list/page/vo",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -76,7 +76,7 @@ export class PostControllerService {
       method: "POST",
       url: "/post/list/page/vo",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -92,7 +92,7 @@ export class PostControllerService {
       method: "POST",
       url: "/post/edit",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -108,7 +108,7 @@ export class PostControllerService {
       method: "POST",
       url: "/post/delete",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -124,7 +124,7 @@ export class PostControllerService {
       method: "POST",
       url: "/post/add",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -140,8 +140,8 @@ export class PostControllerService {
       method: "GET",
       url: "/post/get/vo",
       query: {
-        id: id,
-      },
+        "id": id
+      }
     });
   }
 }

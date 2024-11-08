@@ -25,10 +25,10 @@ export class FileControllerService {
       method: "POST",
       url: "/file/upload",
       query: {
-        uploadFileRequest: uploadFileRequest,
+        "uploadFileRequest": uploadFileRequest
       },
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 }

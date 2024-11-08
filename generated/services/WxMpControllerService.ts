@@ -25,11 +25,11 @@ export class WxMpControllerService {
       method: "GET",
       url: "/",
       query: {
-        timestamp: timestamp,
-        nonce: nonce,
-        signature: signature,
-        echostr: echostr,
-      },
+        "timestamp": timestamp,
+        "nonce": nonce,
+        "signature": signature,
+        "echostr": echostr
+      }
     });
   }
 
@@ -40,7 +40,7 @@ export class WxMpControllerService {
   public static receiveMessage(): CancelablePromise<any> {
     return __request(OpenAPI, {
       method: "POST",
-      url: "/",
+      url: "/"
     });
   }
 
@@ -51,7 +51,7 @@ export class WxMpControllerService {
   public static setMenu(): CancelablePromise<string> {
     return __request(OpenAPI, {
       method: "GET",
-      url: "/setMenu",
+      url: "/setMenu"
     });
   }
 }

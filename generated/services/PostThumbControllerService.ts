@@ -21,7 +21,7 @@ export class PostThumbControllerService {
       method: "POST",
       url: "/post_thumb/",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 }

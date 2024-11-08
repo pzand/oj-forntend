@@ -37,7 +37,7 @@
 <script setup lang="ts">
 import { routes } from "@/router/routes";
 import { useRoute, useRouter } from "vue-router";
-import { onMounted, ref, watch, watchEffect } from "vue";
+import { ref, watch, watchEffect } from "vue";
 import { useStore } from "vuex";
 import checkAccess from "@/access/checkAccess";
 
@@ -56,12 +56,10 @@ const checkVisibleRoutes = () => {
       return false;
     }
 
-    if (
-      !checkAccess(store.state.user.loginUser, item?.meta?.access as string)
-    ) {
-      return false;
-    }
-    return true;
+    return checkAccess(
+      store.state.user.loginUser,
+      item?.meta?.access as string
+    );
   });
 };
 // 侦听用户的变化
@@ -71,7 +69,7 @@ watch(store.state.user, () => {
 });
 
 // 跳转路由
-const selectRoute = ref(["/"]);
+const selectRoute = ref(["/questions"]);
 const doMenuClick = (key: string) => {
   router.push({
     path: key,

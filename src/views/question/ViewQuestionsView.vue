@@ -51,7 +51,6 @@
               <a-option>java</a-option>
               <a-option>cpp</a-option>
               <a-option>go</a-option>
-              <a-option>html</a-option>
             </a-select>
           </a-form-item>
         </a-form>
@@ -71,7 +70,6 @@ import { onMounted, ref, withDefaults, defineProps } from "vue";
 import {
   QuestionControllerService,
   QuestionSubmitAddRequest,
-  QuestionSubmitControllerService,
   QuestionVO,
 } from "../../../generated";
 import { Message } from "@arco-design/web-vue";
@@ -106,14 +104,14 @@ const doSubmit = async () => {
     return;
   }
 
-  const res = await QuestionSubmitControllerService.doQuestionSubmit({
+  const res = await QuestionControllerService.doQuestionSubmit({
     ...form.value,
     questionId: props.id,
   });
   if (res.code === 0) {
     Message.success("提交成功");
   } else {
-    Message.error("提交失败" + res.message);
+    Message.error("提交失败: " + res.message);
   }
 };
 

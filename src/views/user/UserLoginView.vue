@@ -22,6 +22,12 @@
         </a-button>
       </a-form-item>
     </a-form>
+    <a-space
+      align="baseline"
+      style="display: flex; flex-direction: row-reverse"
+    >
+      <a-link @click="clickRegister">注册</a-link>
+    </a-space>
   </div>
 </template>
 <script setup lang="ts">
@@ -41,6 +47,12 @@ const form = reactive({
 
 const router = useRouter();
 const store = useStore();
+const clickRegister = async () => {
+  router.push({
+    path: "/user/register",
+    replace: true,
+  });
+};
 /**
  * 提交信息
  */
@@ -48,7 +60,7 @@ const handleSubmit = async () => {
   const res = await UserControllerService.userLogin(form);
   if (res.code === 0) {
     await store.dispatch("user/getLoginUser");
-    router.push({
+    await router.push({
       path: "/",
       replace: true,
     });

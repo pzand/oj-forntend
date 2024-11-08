@@ -1,6 +1,5 @@
 <template>
   <div id="questionsView">
-    <h2>创建题目</h2>
     <a-form :model="searchParams" layout="inline">
       <a-form-item field="title" label="标题" style="min-width: 300px">
         <a-input v-model="searchParams.title" placeholder="请输入标题" />
@@ -55,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watchEffect } from "vue";
+import { onMounted, ref } from "vue";
 import {
   Question,
   QuestionControllerService,
@@ -76,7 +75,7 @@ const searchParams = ref<QuestionQueryRequest>({
 });
 
 const loadData = async () => {
-  const res = await QuestionControllerService.listQuestionVoByPage1(
+  const res = await QuestionControllerService.listQuestionVoByPage(
     searchParams.value
   );
   if (res.code === 0) {
@@ -93,9 +92,9 @@ const loadData = async () => {
 //   loadData();
 // });
 
-watchEffect(() => {
-  loadData();
-});
+// watchEffect(() => {
+//   loadData();
+// });
 
 onMounted(() => {
   loadData();

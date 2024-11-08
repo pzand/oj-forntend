@@ -24,7 +24,7 @@ export class PostFavourControllerService {
       method: "POST",
       url: "/post_favour/my/list/page",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -40,7 +40,7 @@ export class PostFavourControllerService {
       method: "POST",
       url: "/post_favour/list/page",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 
@@ -56,7 +56,7 @@ export class PostFavourControllerService {
       method: "POST",
       url: "/post_favour/",
       body: requestBody,
-      mediaType: "application/json",
+      mediaType: "application/json"
     });
   }
 }

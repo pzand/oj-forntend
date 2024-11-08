@@ -4,6 +4,7 @@ import router from "@/router";
 import store from "@/store";
 
 // 为什么不使用 useRouter(), useStore()？因为以上函数自能在vue中使用
+// 而router，可以在普通的ts文件中引用
 // const router = useRouter();
 
 router.beforeEach(async (to, from, next) => {
