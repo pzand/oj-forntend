@@ -33,4 +33,5 @@ openapi --input http://localhost:8121/api/v3/api-docs --output ./generated --cli
 ### Customize configuration
 - 前端组件：https://arco.design/vue/component/form
 - markdown组件：https://github.com/pd4d10/bytemd
-- 代码组件：https://github.com/microsoft/monaco-editor
+- 代码高亮组件：https://github.com/microsoft/monaco-editor
+- 日期组件: https://github.com/moment/moment
