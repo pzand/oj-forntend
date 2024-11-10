@@ -20,7 +20,10 @@ export type OpenAPIConfig = {
 };
 
 export const OpenAPI: OpenAPIConfig = {
-  BASE: "http://118.178.138.114:8101/api",
+  // 远程
+  // BASE: "http://118.178.138.114:8100/api",
+  // 本地
+  BASE: "http://localhost:8100/api",
   VERSION: "0",
   WITH_CREDENTIALS: true,
   CREDENTIALS: "include",
